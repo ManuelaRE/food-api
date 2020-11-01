@@ -1,17 +1,15 @@
 import React from 'react';
-import Signin from '../../components/SignIn';
+
 import {Router} from '@reach/router';
-import PrivateRoutes from '../PrivateRoutes/PrivateRoutes';
+import Dashboard from '../Daskboard/Dashboard';
 
 const Routes = (props) => {
-const {user, signIn, signOut} = props;
+
+const {user, recipes} = props;
 
     return (
         <Router>
-            <Signin path="/" signIn={signIn} signOut={signOut} user={user}/>
-            <PrivateRoutes path="/" user={user}>
-
-            </PrivateRoutes>
+            <Dashboard path="/" user={user} recipes={recipes} />
         </Router>
     )
 }
